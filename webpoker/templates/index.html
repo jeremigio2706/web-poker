@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Poker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+<div class="container">
+    <div class="b">
+        {% if nombre_imagen_1 or nombre_imagen_2 or nombre_imagen_3 or nombre_imagen_4 or nombre_imagen_5 or
+        nombre_imagen_6 or nombre_imagen_7 %}
+        <h2>"Para reiniciar la mano clic aqui"</h2>
+        <form action="/" method="POST">
+            <button class="a" type="submit" name="reinicio">Reiniciar</button>
+        </form>
+        {% endif %}
+    </div>
+    <div class="box">
+        <div class="btn_up">
+            <form action="/" method="POST">
+                <h2>"Si un jugador sube la apuesta clic aqui"</h2>
+                <button type="submit" name="up_value">Subieron la apuesta</button>
+            </form>
+        </div>
+
+
+        <div class="center_block">
+            <div class="center_card" id="r0">
+                <form class="cartas" action="/" method="POST">
+                    <input type="texto" name="nombre_imagen_1" placeholder="Enter card" class="someclass">
+                    <button>Enviar</button>
+                </form>
+
+                {% if nombre_imagen_1 %}
+                <img src="/static/image/{{ nombre_imagen_1 }}.png" alt="Imagen">
+                {% else %}
+                <img src="/static/image/back.png" alt="Imagen">
+                {% endif %}
+
+            </div>
+            <div class="center_card" id="r1">
+                <form class="cartas" action="/" method="POST">
+                    <input type="texto" name="nombre_imagen_2" placeholder="Enter card" class="someclass">
+                    <button>Enviar</button>
+                </form>
+
+                {% if nombre_imagen_2 %}
+                <img src="/static/image/{{ nombre_imagen_2 }}.png" alt="Imagen">
+                {% else %}
+                <img src="/static/image/back.png" alt="Imagen">
+                {% endif %}
+
+            </div>
+            <div class="center_card" id="r2">
+                <form class="cartas" action="/" method="POST">
+                    <input type="texto" name="nombre_imagen_3" placeholder="Enter card" class="someclass">
+                    <button>Enviar</button>
+                </form>
+
+                {% if nombre_imagen_3 %}
+                <img src="/static/image/{{ nombre_imagen_3 }}.png" alt="Imagen">
+                {% else %}
+                <img src="/static/image/back.png" alt="Imagen">
+                {% endif %}
+
+            </div>
+            <div class="center_card" id="r3">
+                <form class="cartas" action="/" method="POST">
+                    <input type="texto" name="nombre_imagen_4" placeholder="Enter card" class="someclass">
+                    <button>Enviar</button>
+                </form>
+
+                {% if nombre_imagen_4 %}
+                <img src="/static/image/{{ nombre_imagen_4 }}.png" alt="Imagen">
+                {% else %}
+                <img src="/static/image/back.png" alt="Imagen">
+                {% endif %}
+
+            </div>
+            <div class="center_card" id="r4">
+                <form class="cartas" action="/" method="POST">
+                    <input type="texto" name="nombre_imagen_5" placeholder="Enter card" class="someclass">
+                    <button>Enviar</button>
+                </form>
+
+                {% if nombre_imagen_5 %}
+                <img src="/static/image/{{ nombre_imagen_5 }}.png" alt="Imagen">
+                {% else %}
+                <img src="/static/image/back.png" alt="Imagen">
+                {% endif %}
+
+            </div>
+        </div>
+
+
+        <div class="bloque_propio">
+            <div class="card_abajo" id="1">
+                <form class="cartas" action="/" method="POST">
+                    <input type="texto" name="nombre_imagen_6" placeholder="Enter card" class="someclass">
+                    <button>Enviar</button>
+                </form>
+
+                {% if nombre_imagen_6 %}
+                <img src="/static/image/{{ nombre_imagen_6 }}.png" alt="Imagen">
+                {% else %}
+                <img src="/static/image/back.png" alt="Imagen">
+                {% endif %}
+
+            </div>
+            <div class="card_abajo" id="2">
+                <form class="cartas" action="/" method="POST">
+                    <input type="texto" name="nombre_imagen_7" placeholder="Enter card" class="someclass">
+                    <button>Enviar</button>
+                </form>
+
+                {% if nombre_imagen_7 %}
+                <img src="/static/image/{{ nombre_imagen_7 }}.png" alt="Imagen">
+                {% else %}
+                <img src="/static/image/back.png" alt="Imagen">
+                {% endif %}
+            </div>
+
+
+        </div>
+        <div class="btn_enviar">
+            <form action="/" method="POST">
+            <button type="submit" name="start">Comenzar</button>
+        </form>
+        </div>
+
+    </div>
+
+
+    <!-- <button onclick="Call()">Call</button> -->
+    <!--<button onclick="Raise()">Raise</button>
+    <button onclick="Fold()">Fold</button>-->
+    <div id="textBox">
+        <div id="messages">
+            <h3>{{ respuesta }}</h3>
+
+
+        </div>
+    </div>
+
+</div>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAToXIStdgNVtReHHKdw-R29dTxEXZ_2F0",
+    authDomain: "web-poker-b0094.firebaseapp.com",
+    projectId: "web-poker-b0094",
+    storageBucket: "web-poker-b0094.appspot.com",
+    messagingSenderId: "63885184809",
+    appId: "1:63885184809:web:473b8cb079ebafb6503138",
+    measurementId: "G-Q1BWLQ1TP1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

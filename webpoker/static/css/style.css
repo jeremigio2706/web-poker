@@ -1,0 +1,147 @@
+body {
+    background: green;
+
+}
+
+.container {
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+
+}
+
+.b {
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+}
+
+.a {
+    margin-left: 20px;
+
+}
+
+.btn_up {
+    position: relative;
+    text-align: center;
+    bottom: 3%;
+
+
+}
+
+
+.box {
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    height: 600px;
+    width: auto;
+    border: 5px black solid;
+    background-image: url("/static/image/bg.jpg");
+}
+
+
+.card_abajo {
+    position: relative;
+    display: inline-flex;
+    border: white 2px solid;
+    width: 150px;
+    height: 250px;
+    overflow: hidden;
+
+}
+
+.bloque_propio {
+    display: flex;
+    width: 820px;
+    position: absolute;
+    bottom: -18%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+
+}
+
+.center_block {
+    display: flex;
+    width: 820px;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center_card {
+    position: relative;
+    display: inline-flex;
+    border: white 2px solid;
+    width: 150px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.btn_enviar {
+
+    position: relative;
+    margin: auto;
+    top: 60%;
+    left: 35%;
+
+
+}
+
+#textBox {
+    position: relative;
+    display: inline-flex;
+    height: 200px;
+    width: 500px;
+    border: 5px solid black;
+    bottom: 250px;
+    left: 47%;
+
+}
+
+#messages {
+    overflow: auto;
+    padding: 0px;
+    font-size: 10px;
+
+}
+
+.cartas {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    top: 45%;
+    left: 0%;
+
+}
+
+.someclass {
+    width: 85px;
+}
+
+
+.center_card img {
+    position: absolute;
+    top: -12px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+}
+
+.card_abajo img {
+    position: absolute;
+    top: -12px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+}
+
