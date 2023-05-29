@@ -1,21 +1,49 @@
-from pyChatGPT import ChatGPT
 import time
 
-def chatia():
-    session_token = 'eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..0BcPChEWzTUu9Xp1.K3AsOSpcQXdtHyxDp81d-tJ02iERBQaHSxzqUFzjHYUDArty7bFW3H8hnYlBgTEvCxkEr08FWau-j6Dhn4xqqRj8ZKqpUIoZUf1Z-OjlYoTDeIH2bfhcQ_2bzRm2HN7wGiqECrW9wEMbsel7rqMcoVHyhVO4OqbfCjSFIdW0gdyP-l3vPivc5aGBYFMeWZSlH6Ly6nRUekNr8H87eb7ZkElraCklus7AaKAzDWd98xWKZMUtYFgf5eTQfqBl4fIdo1WtpSnHGm2BeregQ7-JbpDnxnt_5NEMXMycRbXKV7DWL7B_CWG7rjGUdrscvt4Y9ycu_PH2iCwMWoouidENMOZ2sMks9g8qHoKHzdy1UBxjnJ5J22qPjO0xpeJaw0WbIl_S1z0zYUF8nYdfetSG95OU3VQvs2Z8_lhw0n5IwXvUiK3VfgYd3vQUYvP0TJgT39TaRXBSNOcPUZcp2siTiVXk0jfLYpdEqsd0FpczHcsxomMmW8XM1oEGzSuee81n0xc-9yDkeOS8kfJRkaetfmmIEZzrvPjzeB1pEUv15M70csDufWwQX6W8a-LWKxWSvpxmmV4gXUl6qtmhbZC74zDynjNJ9KyEjUuqt-tvDD560tdU7gQn-fuvBrDZOpZ65LxToIQwA-5-TAhOx28Jom4kfDDI-Mp64zAmB2Z7t3agAJt3Ngfiti8WwKkpNyeI4X2xE96duXbJih9zINdRUY0y6_rVjqai08z0Gbw7iK9DxFqlNeB7x3rNjWTqrifTa7x8qN0fPZICY-L6z9WCnvb6zhnzHDkSQh3ZzmdpfnZc8TA-kXGYjhJ7brpv9CctvG_ziAEwszGXMxI82DrxkXfeg1FohQ2U4_afTj9W2I9BiWIaeSo93-Fd47X9fFOma66A3kSAGH5ltxTLb55nAt2kOT_oEtI4buH241jm0DCOGcN0wjrbC12q_flONo8n0pTh7YboN66WgO_5mjkbWhKtxpcI6pE2_dht9UnjMPdkTvNLOccIn5zROysBY5RAZwovTAVvkWtANg1WbZ-kCbxlOw3IWUbVuBJNxLxTTr1PiGtWt4Y-8bpY2m1lUzjmIMddPiqhNGEBkIYEdAarZNl_1Yn1jrnbeneEKhaDsct10toH5PvF3WhHJMyi6YgIqBe6nZY5VTvkGx5L2ESG_-7IeN2X2wrSBg8SRuSiAq9z5WUV6sBKXjeK0NjcGg31T8JEGWj-Mye4e7bA_dYaydoVbNfI2gj0PvHfIIfHkeYUGrOJsIyoJg2HHY_mVqqFtiDDbYhFkewcsHe92Z94KVsRUzDumXFcKx415J2pfJhCFfwbkYDjVHTi2PfSm8ODloIBQ3GjYwT9VgHJ63m8Bhnb0Vktok07uRGBE2PVY2WgrD93f_eLeIOYXYvwgHyBSSAJJVOw5CDhNcO0la_8VF8ubvWRZckkqjhzoJcCQdZXDOyYBkIdIDNHn8PxABKIx-Ha-T-2WACwT-Lhy75NkbsbQelk8rJIofAJ_E_fZUcOoWtLXdfi-LI-3FDW4sLJYlN637JbBu-_aAhUp3wg-vQQR9odApRVaCNyM2_HUGqnkRIcFiKO-18bXXZReYIftrHanu2IurB68zaTnBuSrNptKMGAU5vlJANJsYFwzG4JCvad2vvwf4VehFvSTgqVpCLt4YviZJ9IzZv9VxixTdBrqNGaz2FCnVsKxP5svDlL5kAX5IFbNYgZ2QlTwwsqn_Zv6KcitwOe8HISS_55BZ8W1m3NEEexHyuLsGR6zGuX7BWBu6w6KP3rtnVGNzinTOe7AHJuD-zTZT86l-sDpOwewhomTdMducBNVHMYEP4sSFeWEn5XShPmMa5a-mCvZOkezLyV9IFBpAXsaOWi6OjSlnlO2gIKhzHbN8SQ7ljPkS4LLPzKWkKpkwzabKK492G0S8PAt4wGTVa_CbQZPaicfqwefFDaeKE9d2NH1PUOLEV_MC48lva24u5WCXOeOaH1fxNY4qV6VBXZnj7ozKQmOgHemZSZ_KQ-SYAZRsnhamQg6C9FxOCZGcALCfANgYGCP4p4Tk8xl8um6vHT9cHdZI6Tufo_B7O-pizebiJ4qazpAvK6LBfEuJLqZbLASxM9ke5CD2VPt1LPkTScR1HhOIC3KC9vqKvysSAwbrkV3kJ-Q4T1NjdyKCJJ7A2--juXBDCzYRPIsvGV0FnC4djWNdpYElVQGaAzArP5C5VJaYzZ-9Y6MsbaKRDpTq1PaSLJbtlY0zpDekl6wvGCL046Rhmdz1LH4LaJUFoCygoI_tqETM6cxA2VVfsKUW5ld3CY3RDWzFdVwPoJBwR6_6gcQekaFxHBXw2tvuurjNh0cgXVDMUex4J_IcX-OkkfdV1OY07LbXyUG_Wwv3XdWLYpULEQmbTLsd7Jq4xUeYVkn9XdDtsgO1F-ZR9zoLheYdlIYuz09JVnvzRyLwpFCylkGzRGyJ07BWpnjOz7MwVHs_zXVBAsRGlGN5z5VrCQZOOluslGwc-9XNYowAbf4ECPyrcG1Cx9DrrIiULb16yA_vGqBPD-rFtNSZefmehjH0d6szNmXbYbuxQs_Dt-lU7kAWrbxA5yCijOeF2cF5gwWiwZwKKcjwt9yhhu8e5uPJscAjeylTctpLvRF_lj7xzavZNqR9UJXJEr3Fl2y0Ag7RK61CQU7yJBYwSK2G8nzm__TPmco2Jx4q4ZrxEMX5ngaBU8txx9idjSUHwFfPnG7te7UOE-M8CWngxdVEfIIhgW9kR8qCQItKMYR-eIkq4rjxcpGC2_2XY7vT6HnqVmTQCY5jXByJiXQcKt4FIY3yx2DJTO45PcZ6AytLtibf-WF-wf.ohOk_XRn1zP4DzALQoSktA'
-    conversation_id = ''
-    chat = ChatGPT(session_token, conversation_id)
+import openai
 
-    #prompt = "Quiero que actúes como el mejor jugador de Poker profesional y cumplas los siguientes pasos 1 - me vas a preguntar mis cartas de pre flop, te escribire las cartas, tu vas a analizar mi respuesta y me escribirás la mejor opción a tomar, en una respuesta que comience con “pre flop”, esta respuesta no puede ser mayor de 10 palabras. 2 – Después de decirme que opción tomar en el pre flop, yo voy a escribirte las cartas del flop, me escribirás la mejor opción a tomar según las cartas de mi mano y la mesa, en una respuesta que comience con “flop”, esta respuesta no puede ser mayor de 10 palabras. 3 – después de decirme que opción tomar en el flop, yo voy a escribirte las cartas del turn, me escribirás la mejor opción a tomar según las cartas de mi mano y la mesa, en una respuesta que comience con “turn”, esta respuesta no puede ser mayor de 10 palabras. 4 – después de decirme que opción tomar en el turn, yo voy a escribirte las cartas del river, me escribirás la mejor opción a tomar según las cartas de mi mano y la mesa, en una respuesta que comience con “river”, esta respuesta no puede ser mayor de 10 palabras. Cuando escriba “up” va significar que otro jugador subió la apuesta, y tu debes decirme si igualar o retirarme según mis cartas y las cartas de la mesa. Cuando escriba “xxx” comenzaremos de nuevo. Reglas que debes tomar en cuenta para entender lo que escribo: me voy a referir a el palo de trebol como T por ejemplo la carta de 2 de trebol la escribiré 2T me voy a referir a el palo de diamante como D por ejemplo la carta de 2 de diamante la escribiré 2D me voy a referir a el palo de corazones como C por ejemplo la carta de 2 de corazón la escribire 2C me voy a referir a el palo de picas como P por ejemplo la carta de 2 de picas la escribiré 2P"
-    prompt = 'que bola'
-    time.sleep(15)
-    resp = chat.send_message(prompt)
-    time.sleep(5)
-    respuesta = resp['message']
+openai.api_key = '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'
 
-    return respuesta
+messages = []
+question = {}
+response_ia = {}
+messages.append({"role": "system", "content": """Quiero que actúes como el mejor jugador de Poker profesional y cumplas los siguientes pasos
+    Todo comenzara cuando recibas la respuesta "comencemos" y me vas a preguntar mis cartas de pre flop en una respuesta que empezara con: “Comencemos, dime tus cartas del pre flop:”
+    Tomaras todas las decisiones sobre si igualar, subir la apuesta de manera moderada o agresiva o si retirarme de la ronda siempre y me dirás la decisión según lo siguiente:
+    1-	Te escribiré las cartas, tú vas a analizar mi respuesta que empezara con: “Estas son mis cartas del pre flop:” y me escribirás la mejor opción a tomar, en una respuesta que comience con “pre flop:”, esta respuesta no puede ser mayor de 10 palabras.
+    2-	Después de decirme que opción tomar en el pre flop, yo voy a escribirte las cartas del flop, tú vas a analizar mi respuesta que empezara con: “Estas son las cartas del flop:” y me escribirás la mejor opción a tomar según mis cartas del pre flop y las cartas del flop, en una respuesta que comience con “flop:”, esta respuesta no puede ser mayor de 10 palabras. 
+    3-	Después de decirme que opción tomar en el flop, yo voy a escribirte las cartas del turn, tú vas a analizar mi respuesta que empezara con: “Estas son las cartas del turn:” y me escribirás la mejor opción a tomar según mis cartas del pre flop y las cartas del flop y del turn, en una respuesta que comience con “turn”, esta respuesta no puede ser mayor de 10 palabras. 
+    4-	Después de decirme que opción tomar en el turn, yo voy a escribirte las cartas del river, tú vas a analizar mi respuesta que empezara con: “Estas son las cartas del river:” y me escribirás la mejor opción a tomar según las cartas de mi mano y la mesa, en una respuesta que comience con “river”, esta respuesta no puede ser mayor de 10 palabras. 
+    Cuando te escriba “Un Jugador subió la apuesta” va significar que otro jugador subió la apuesta, y tú debes decidir y decirme que opción tomar según mis cartas del pre flop y del flop, del turn y/o del river en una respuesta que comenzara con “Apuesta subida por otro jugador tu deberías:” y me dices que opción tomar.
+    Cuando te escriba “Reiniciar el juego” comenzaremos de nuevo y me pedirás mis cartas del pre flop en una respuesta que empezara con: “Comencemos de nuevo, dime tus cartas del pre flop”.
+    Reglas que debes tomar en cuenta para entender lo que escribo: me voy a referir a el palo de trébol como T por ejemplo la carta de As de trébol la escribiré AT me voy a referir a el palo de diamante como D por ejemplo la carta King de diamante la escribiré KD me voy a referir a el palo de corazones como C por ejemplo la carta Queen de corazón la escribiré QC me voy a referir a el palo de picas como P por ejemplo la carta de 2 de picas la escribiré 2P
+    En todo momento me vas a  evaluar la fuerza de mi mano y me vas a decir que decisión tomar sobre el juego, si debo retirarme, subir la apuesta de manera moderada o fuerte o si retirame de la ronda.
+"""})
+def chat_ia(prompt):
+    question['role'] = 'user'
+    question['content'] = prompt
+    messages.append(question)
+
+    try:
+        response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=messages)
+
+        try:
+            answer = response['choices'][0]['message']['content']
+            """response_ia['role'] = 'assistant'
+            response_ia['content'] = answer
+            messages.append(response_ia)"""
+        except:
+            answer = 'Esto es una mierda y no funciona'
+    except Exception as e:
+        answer = e
+
+    return answer
 
 
-prueba = chatia()
-print(prueba)
+while True:
+    prompt = input('Introduce tu pregunta: ')
+    print(chat_ia(prompt))
+
+    time.sleep(2)
+
 
