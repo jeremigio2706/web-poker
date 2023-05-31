@@ -1,13 +1,11 @@
 from flask import Flask, request, render_template, session
-import time
+import csv
+import datetime
 import random
 import string
 import openai
 
-
-
-
-openai.api_key = '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'
+openai.api_key = ''
 messages = []
 messages.append({"role": "system", "content": """Quiero que actúes como el mejor jugador de Poker profesional y cumplas los siguientes pasos
     Todo comenzara cuando recibas la respuesta "comencemos" y me vas a preguntar mis cartas de pre flop en una respuesta que empezara con: “Comencemos, dime tus cartas del pre flop:”
@@ -35,7 +33,40 @@ app.secret_key = generar_valor_aleatorio()
 global prompt, chat
 
 
+
+
+@app.route('/enviar', methods=['POST'])
+def enviar():
+    nombre = request.form['nombre']
+    correo = request.form['correo']
+    mensaje = request.form['mensaje']
+    fecha = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    with open('datos.csv', 'a', newline='') as archivo_csv:
+        writer = csv.writer(archivo_csv)
+        if archivo_csv.tell() == 0:
+            writer.writerow(['Fecha', 'Nombre', 'Correo', 'Mensaje'])
+
+    with open('datos.csv', 'a', newline='') as archivo_csv:
+        writer = csv.writer(archivo_csv)
+        writer.writerow([fecha, nombre, correo, mensaje])
+
+    return render_template('gracias.html', nombre=nombre, correo=correo)
+
+
+
+
 @app.route('/', methods=['GET', 'POST'])
+def landing():
+    return render_template('inicio.html')
+
+
+@app.route('/contacto', methods=['GET', 'POST'])
+def contact():
+    return render_template('contacto.html')
+
+
+@app.route('/pokeria', methods=['GET', 'POST'])
 def home():
     if 'nombre_imagen_1' not in session:
         session['nombre_imagen_1'] = None
@@ -192,7 +223,8 @@ def escribir_box():
 
 def concatenar_flop():
     if session['nombre_imagen_1'] and session['nombre_imagen_2'] and session['nombre_imagen_3']:
-        cartas_flop = 'Estas son las cartas del flop:' + " " + session['nombre_imagen_1'] + " " + session['nombre_imagen_2'] + " " + session['nombre_imagen_3']
+        cartas_flop = 'Estas son las cartas del flop:' + " " + session['nombre_imagen_1'] + " " + session[
+            'nombre_imagen_2'] + " " + session['nombre_imagen_3']
     else:
         cartas_flop = "No estan todas las cartas del Flop (Espacio 1, 2 y 3)"
     return cartas_flop
@@ -210,7 +242,8 @@ def concatenar_river():
 
 def concatenar_preflop():
     if session['nombre_imagen_6'] and session['nombre_imagen_7']:
-        cartas_preflop = 'Estas son mis cartas del pre flop:' + " " + session['nombre_imagen_6'] + " " + session['nombre_imagen_7']
+        cartas_preflop = 'Estas son mis cartas del pre flop:' + " " + session['nombre_imagen_6'] + " " + session[
+            'nombre_imagen_7']
     else:
         cartas_preflop = "no estan todas las cartas del preflop"
     return cartas_preflop

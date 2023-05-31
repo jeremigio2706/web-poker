@@ -2,9 +2,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Mi Poker</title>
+    <title>Poker IA</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <div class="header">
+    <h1>Asistente de Poker con Inteligencia Artificial</h1>
+    </div>
+
+    <div class="navbar">
+    <a href="/">Inicio</a>
+    <a href="/contacto">Contacto</a>
+    <a href="https://www.mediafire.com/file/ksvv8vkwqpbinfh/qbola_gpt.apk/file">Otras Apps</a>
+    </div>
 
 </head>
 <body>
@@ -13,14 +23,14 @@
         {% if nombre_imagen_1 or nombre_imagen_2 or nombre_imagen_3 or nombre_imagen_4 or nombre_imagen_5 or
         nombre_imagen_6 or nombre_imagen_7 %}
         <h2>"Para reiniciar la mano clic aqui"</h2>
-        <form action="/" method="POST">
+        <form action="/pokeria" method="POST">
             <button class="a" type="submit" name="reinicio">Reiniciar</button>
         </form>
         {% endif %}
     </div>
     <div class="box">
         <div class="btn_up">
-            <form action="/" method="POST">
+            <form action="/pokeria" method="POST">
                 <h2>"Si un jugador sube la apuesta clic aqui"</h2>
                 <button type="submit" name="up_value">Subieron la apuesta</button>
             </form>
@@ -29,7 +39,7 @@
 
         <div class="center_block">
             <div class="center_card" id="r0">
-                <form class="cartas" action="/" method="POST">
+                <form class="cartas" action="/pokeria" method="POST">
                     <input type="texto" name="nombre_imagen_1" placeholder="Enter card" class="someclass">
                     <button>Enviar</button>
                 </form>
@@ -42,7 +52,7 @@
 
             </div>
             <div class="center_card" id="r1">
-                <form class="cartas" action="/" method="POST">
+                <form class="cartas" action="/pokeria" method="POST">
                     <input type="texto" name="nombre_imagen_2" placeholder="Enter card" class="someclass">
                     <button>Enviar</button>
                 </form>
@@ -55,7 +65,7 @@
 
             </div>
             <div class="center_card" id="r2">
-                <form class="cartas" action="/" method="POST">
+                <form class="cartas" action="/pokeria" method="POST">
                     <input type="texto" name="nombre_imagen_3" placeholder="Enter card" class="someclass">
                     <button>Enviar</button>
                 </form>
@@ -68,7 +78,7 @@
 
             </div>
             <div class="center_card" id="r3">
-                <form class="cartas" action="/" method="POST">
+                <form class="cartas" action="/pokeria" method="POST">
                     <input type="texto" name="nombre_imagen_4" placeholder="Enter card" class="someclass">
                     <button>Enviar</button>
                 </form>
@@ -81,7 +91,7 @@
 
             </div>
             <div class="center_card" id="r4">
-                <form class="cartas" action="/" method="POST">
+                <form class="cartas" action="/pokeria" method="POST">
                     <input type="texto" name="nombre_imagen_5" placeholder="Enter card" class="someclass">
                     <button>Enviar</button>
                 </form>
@@ -98,7 +108,7 @@
 
         <div class="bloque_propio">
             <div class="card_abajo" id="1">
-                <form class="cartas" action="/" method="POST">
+                <form class="cartas" action="/pokeria" method="POST">
                     <input type="texto" name="nombre_imagen_6" placeholder="Enter card" class="someclass">
                     <button>Enviar</button>
                 </form>
@@ -111,7 +121,7 @@
 
             </div>
             <div class="card_abajo" id="2">
-                <form class="cartas" action="/" method="POST">
+                <form class="cartas" action="/pokeria" method="POST">
                     <input type="texto" name="nombre_imagen_7" placeholder="Enter card" class="someclass">
                     <button>Enviar</button>
                 </form>
@@ -126,17 +136,12 @@
 
         </div>
         <div class="btn_enviar">
-            <form action="/" method="POST">
+            <form action="/pokeria" method="POST">
             <button type="submit" name="start">Comenzar</button>
         </form>
         </div>
 
     </div>
-
-
-    <!-- <button onclick="Call()">Call</button> -->
-    <!--<button onclick="Raise()">Raise</button>
-    <button onclick="Fold()">Fold</button>-->
     <div id="textBox">
         <div id="messages">
             <h1>{{ respuesta }}</h1>
@@ -146,6 +151,27 @@
     </div>
 
 </div>
+
+    <div class="publicida" style="display: inline-block; padding: 25px; float: left;">
+      <iframe data-aa='2220505' src='//ad.a-ads.com/2220505?size=240x400' style='width:240px; height:400px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+  </div>
+  <div class="publicida" style="display: inline-block; padding: 25px;">
+      <iframe data-aa='2220505' src='//ad.a-ads.com/2220505?size=240x400' style='width:240px; height:400px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+  </div>
+  <div class="publicida" style="display: inline-block; padding: 25px;">
+      <iframe data-aa='2220505' src='//ad.a-ads.com/2220505?size=240x400' style='width:240px; height:400px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+  </div>
+  <div class="publicida" style="display: inline-block; padding: 25px;">
+      <iframe data-aa='2220505' src='//ad.a-ads.com/2220505?size=240x400' style='width:240px; height:400px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+  </div>
+   <div class="publicida" style="display: inline-block; padding: 25px;">
+      <iframe data-aa='2220505' src='//ad.a-ads.com/2220505?size=240x400' style='width:240px; height:400px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+  </div>
+
+
+
+
+
 
 </body>
 </html>
